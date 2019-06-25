@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WAN安卓</string>
+
+    <string name="server_request_error">服务器处理请求出错</string>
+    <string name="server_not_handle">服务器无法处理请求</string>
+    <string name="request_redirect">请求被重定向到其他页面</string>
+    <string name="server_internal_error">网络异常</string>
+    <string name="cannot_connected_server">网络连接出错</string>
+    <string name="login_invalid">请先登录</string>
+
+</resources>
