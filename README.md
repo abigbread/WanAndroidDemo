@@ -1,2 +1,2 @@
 # WanAndroidDemo
-Dagger+Retrofit+RxJava+MVP
+Dagger+Retrofit+RxJava+MVP 使用 wanAndroid 官网 Api 实现简单 demo 用于学习框架
