@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 
+import com.hjq.toast.ToastUtils;
 import com.orhanobut.logger.Logger;
 import com.wan.bread.wanandroid.R;
 import com.wan.bread.wanandroid.WanApplication;
@@ -83,18 +84,29 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.login_confirm_btn:
-                presenter.login("abigbread","harding1314");
+                if (accountEt.getText().toString().trim().isEmpty()||
+                        accountEt.getText().toString().trim().isEmpty()){
+                    ToastUtils.show("账号或密码不能为空");
+                    return;
+                }
+                presenter.login(accountEt.getText().toString().trim(),psdEt.getText().toString().trim());
                 break;
         }
     }
 
     @Override
     public void showFailure(Throwable e) {
+        Logger.d(e.getMessage());
+    }
 
+    @Override
+    public void showFailureMsg(String msg) {
+        ToastUtils.show(msg);
     }
 
     @Override
     public void saveLoginData(LoginBean data) {
         Logger.d(data);
+        finish();
     }
 }

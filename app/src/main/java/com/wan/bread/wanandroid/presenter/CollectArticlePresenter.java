@@ -50,6 +50,11 @@ public class CollectArticlePresenter extends BasePresenter<CollectArticleContrac
                     public void onFailure(String errorMsg) {
                         Logger.d("CollectArticlePresenter --> onSuccess");
                     }
+
+                    @Override
+                    public void onFailure(Throwable e) {
+
+                    }
                 });
     }
 }

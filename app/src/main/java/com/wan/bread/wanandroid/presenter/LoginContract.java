@@ -18,10 +18,14 @@ public interface LoginContract {
         @Override
         void showFailure(Throwable e);
 
+        void showFailureMsg(String msg);
+
         /**
          * 保存登录后的数据
          * @param data 登录后的数据
          */
         void saveLoginData(LoginBean data);
+
+
     }
 }

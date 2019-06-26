@@ -60,6 +60,11 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
                     public void onFailure(String errorMsg) {
                         Logger.i("BaseObserver --> onFailure");
                     }
+
+                    @Override
+                    public void onFailure(Throwable e) {
+
+                    }
                 });
 
     }

@@ -47,11 +47,18 @@ public class LoginPresenter extends BasePresenter<LoginContract.View> implements
                     @Override
                     public void onSuccess(LoginBean result) {
                         Logger.d("LoginPresenter --> onSuccess");
+                        mView.saveLoginData(result);
                     }
 
                     @Override
                     public void onFailure(String errorMsg) {
                         Logger.d("LoginPresenter --> onFailure");
+                        mView.showFailureMsg(errorMsg);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable e) {
+                        mView.showFailure(e);
                     }
                 });
     }

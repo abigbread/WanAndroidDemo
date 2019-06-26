@@ -70,6 +70,7 @@ public abstract class BaseObserver<T> implements Observer<Response<T>> {
         }
         ToastUtils.show(resultMsg);
         onFailure(resultMsg);
+        onFailure(e);
     }
 
     @Override
@@ -95,4 +96,6 @@ public abstract class BaseObserver<T> implements Observer<Response<T>> {
     public abstract void onSuccess(T result);
 
     public abstract void onFailure(String errorMsg);
+
+    public abstract void onFailure(Throwable e);
 }
